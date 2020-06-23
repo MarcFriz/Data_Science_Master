@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve CleanedData_complete" width="90" x="45" y="340">
+        <parameter key="repository_entry" value="../../daten/cleaned/CleanedData_complete_oneStation"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="124" name="Multiply (4)" width="90" x="179" y="340"/>
+      <operator activated="true" class="select_attributes" compatibility="9.6.000" expanded="true" height="82" name="Select Attributes e10" width="90" x="313" y="187">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value="average(e10_cleaned)|Date New|Label e10|Price_brent|Price_ural"/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10" width="90" x="447" y="187">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="1"/>
+          <parameter key="Price_brent" value="1"/>
+          <parameter key="Price_ural" value="1"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (2)" width="90" x="581" y="187">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="2"/>
+          <parameter key="Price_brent" value="2"/>
+          <parameter key="Price_ural" value="2"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (3)" width="90" x="715" y="187">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="3"/>
+          <parameter key="Price_brent" value="3"/>
+          <parameter key="Price_ural" value="3"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (4)" width="90" x="849" y="187">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="4"/>
+          <parameter key="Price_brent" value="4"/>
+          <parameter key="Price_ural" value="4"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (5)" width="90" x="983" y="187">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="5"/>
+          <parameter key="Price_brent" value="5"/>
+          <parameter key="Price_ural" value="5"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="103" name="Multiply" width="90" x="1117" y="187"/>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (6)" width="90" x="1251" y="340">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="6"/>
+          <parameter key="Price_brent" value="6"/>
+          <parameter key="Price_ural" value="6"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (7)" width="90" x="1385" y="340">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="7"/>
+          <parameter key="Price_brent" value="7"/>
+          <parameter key="Price_ural" value="7"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (8)" width="90" x="1519" y="340">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="8"/>
+          <parameter key="Price_brent" value="8"/>
+          <parameter key="Price_ural" value="8"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (9)" width="90" x="1653" y="340">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="9"/>
+          <parameter key="Price_brent" value="9"/>
+          <parameter key="Price_ural" value="9"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e10 (10)" width="90" x="1787" y="340">
+        <list key="attributes">
+          <parameter key="average(e10_cleaned)" value="10"/>
+          <parameter key="Price_brent" value="10"/>
+          <parameter key="Price_ural" value="10"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples e10 lag10" width="90" x="1921" y="340">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date New.gt.01/10/2018 7:29:05 PM"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store (2)" width="90" x="2055" y="340">
+        <parameter key="repository_entry" value="../../daten/cleaned/e10lag10"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples e10 lag5" width="90" x="1251" y="187">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date New.gt.01/05/2018 7:29:05 PM"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store" width="90" x="1385" y="187">
+        <parameter key="repository_entry" value="../../daten/cleaned/e10lag5"/>
+      </operator>
+      <operator activated="true" class="select_attributes" compatibility="9.6.000" expanded="true" height="82" name="Select Attributes e5" width="90" x="313" y="544">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value="Date New|Price_brent|Price_ural|average(e5_cleaned)|Label e5"/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5" width="90" x="447" y="544">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="1"/>
+          <parameter key="Price_brent" value="1"/>
+          <parameter key="Price_ural" value="1"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (2)" width="90" x="581" y="544">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="2"/>
+          <parameter key="Price_brent" value="2"/>
+          <parameter key="Price_ural" value="2"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (3)" width="90" x="715" y="544">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="3"/>
+          <parameter key="Price_brent" value="3"/>
+          <parameter key="Price_ural" value="3"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (4)" width="90" x="849" y="544">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="4"/>
+          <parameter key="Price_brent" value="4"/>
+          <parameter key="Price_ural" value="4"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (5)" width="90" x="983" y="544">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="5"/>
+          <parameter key="Price_brent" value="5"/>
+          <parameter key="Price_ural" value="5"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="103" name="Multiply (2)" width="90" x="1117" y="544"/>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples e5 lag5" width="90" x="1251" y="544">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date New.gt.01/05/2018 7:29:05 PM"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store (3)" width="90" x="1385" y="544">
+        <parameter key="repository_entry" value="../../daten/cleaned/e5lag5"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (6)" width="90" x="1251" y="697">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="6"/>
+          <parameter key="Price_brent" value="6"/>
+          <parameter key="Price_ural" value="6"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (7)" width="90" x="1385" y="697">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="7"/>
+          <parameter key="Price_brent" value="7"/>
+          <parameter key="Price_ural" value="7"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (8)" width="90" x="1519" y="697">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="8"/>
+          <parameter key="Price_brent" value="8"/>
+          <parameter key="Price_ural" value="8"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (9)" width="90" x="1653" y="697">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="9"/>
+          <parameter key="Price_brent" value="9"/>
+          <parameter key="Price_ural" value="9"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag e5 (10)" width="90" x="1787" y="697">
+        <list key="attributes">
+          <parameter key="average(e5_cleaned)" value="10"/>
+          <parameter key="Price_brent" value="10"/>
+          <parameter key="Price_ural" value="10"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples e5 lag10" width="90" x="1921" y="697">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date New.gt.01/10/2018 7:29:05 PM"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store (4)" width="90" x="2055" y="697">
+        <parameter key="repository_entry" value="../../daten/cleaned/e5lag10"/>
+      </operator>
+      <operator activated="true" class="select_attributes" compatibility="9.6.000" expanded="true" height="82" name="Select Attributes e5 (2)" width="90" x="313" y="901">
+        <parameter key="attribute_filter_type" value="subset"/>
+        <parameter key="attribute" value=""/>
+        <parameter key="attributes" value="average(diesel_cleaned)|Date New|Label Diesel|Price_brent|Price_ural"/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag" width="90" x="447" y="901">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="1"/>
+          <parameter key="Price_brent" value="1"/>
+          <parameter key="Price_ural" value="1"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (2)" width="90" x="581" y="901">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="2"/>
+          <parameter key="Price_brent" value="2"/>
+          <parameter key="Price_ural" value="2"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (3)" width="90" x="715" y="901">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="3"/>
+          <parameter key="Price_brent" value="3"/>
+          <parameter key="Price_ural" value="3"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (4)" width="90" x="849" y="901">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="4"/>
+          <parameter key="Price_brent" value="4"/>
+          <parameter key="Price_ural" value="4"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (5)" width="90" x="983" y="901">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="5"/>
+          <parameter key="Price_brent" value="5"/>
+          <parameter key="Price_ural" value="5"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="103" name="Multiply (3)" width="90" x="1117" y="901"/>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples diesel lag5" width="90" x="1251" y="901">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date New.gt.01/05/2018 7:29:05 PM"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store (5)" width="90" x="1385" y="901">
+        <parameter key="repository_entry" value="../../daten/cleaned/diesellag5"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (6)" width="90" x="1251" y="1054">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="6"/>
+          <parameter key="Price_brent" value="6"/>
+          <parameter key="Price_ural" value="6"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (7)" width="90" x="1385" y="1054">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="7"/>
+          <parameter key="Price_brent" value="7"/>
+          <parameter key="Price_ural" value="7"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (8)" width="90" x="1519" y="1054">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="8"/>
+          <parameter key="Price_brent" value="8"/>
+          <parameter key="Price_ural" value="8"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (9)" width="90" x="1653" y="1054">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="9"/>
+          <parameter key="Price_brent" value="9"/>
+          <parameter key="Price_ural" value="9"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="time_series:lag_series" compatibility="9.6.000" expanded="true" height="82" name="Lag (10)" width="90" x="1787" y="1054">
+        <list key="attributes">
+          <parameter key="average(diesel_cleaned)" value="10"/>
+          <parameter key="Price_brent" value="10"/>
+          <parameter key="Price_ural" value="10"/>
+        </list>
+        <parameter key="overwrite_attributes" value="false"/>
+        <parameter key="extend_exampleset" value="false"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples e5 lag10 (2)" width="90" x="1921" y="1054">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date New.gt.01/10/2018 7:29:05 PM"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store (6)" width="90" x="2055" y="1054">
+        <parameter key="repository_entry" value="../../daten/cleaned/diesellag10"/>
+      </operator>
+      <connect from_op="Retrieve CleanedData_complete" from_port="output" to_op="Multiply (4)" to_port="input"/>
+      <connect from_op="Multiply (4)" from_port="output 1" to_op="Select Attributes e10" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 2" to_op="Select Attributes e5" to_port="example set input"/>
+      <connect from_op="Multiply (4)" from_port="output 3" to_op="Select Attributes e5 (2)" to_port="example set input"/>
+      <connect from_op="Select Attributes e10" from_port="example set output" to_op="Lag e10" to_port="example set input"/>
+      <connect from_op="Lag e10" from_port="example set output" to_op="Lag e10 (2)" to_port="example set input"/>
+      <connect from_op="Lag e10 (2)" from_port="example set output" to_op="Lag e10 (3)" to_port="example set input"/>
+      <connect from_op="Lag e10 (3)" from_port="example set output" to_op="Lag e10 (4)" to_port="example set input"/>
+      <connect from_op="Lag e10 (4)" from_port="example set output" to_op="Lag e10 (5)" to_port="example set input"/>
+      <connect from_op="Lag e10 (5)" from_port="example set output" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_op="Filter Examples e10 lag5" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Lag e10 (6)" to_port="example set input"/>
+      <connect from_op="Lag e10 (6)" from_port="example set output" to_op="Lag e10 (7)" to_port="example set input"/>
+      <connect from_op="Lag e10 (7)" from_port="example set output" to_op="Lag e10 (8)" to_port="example set input"/>
+      <connect from_op="Lag e10 (8)" from_port="example set output" to_op="Lag e10 (9)" to_port="example set input"/>
+      <connect from_op="Lag e10 (9)" from_port="example set output" to_op="Lag e10 (10)" to_port="example set input"/>
+      <connect from_op="Lag e10 (10)" from_port="example set output" to_op="Filter Examples e10 lag10" to_port="example set input"/>
+      <connect from_op="Filter Examples e10 lag10" from_port="example set output" to_op="Store (2)" to_port="input"/>
+      <connect from_op="Filter Examples e10 lag5" from_port="example set output" to_op="Store" to_port="input"/>
+      <connect from_op="Select Attributes e5" from_port="example set output" to_op="Lag e5" to_port="example set input"/>
+      <connect from_op="Lag e5" from_port="example set output" to_op="Lag e5 (2)" to_port="example set input"/>
+      <connect from_op="Lag e5 (2)" from_port="example set output" to_op="Lag e5 (3)" to_port="example set input"/>
+      <connect from_op="Lag e5 (3)" from_port="example set output" to_op="Lag e5 (4)" to_port="example set input"/>
+      <connect from_op="Lag e5 (4)" from_port="example set output" to_op="Lag e5 (5)" to_port="example set input"/>
+      <connect from_op="Lag e5 (5)" from_port="example set output" to_op="Multiply (2)" to_port="input"/>
+      <connect from_op="Multiply (2)" from_port="output 1" to_op="Filter Examples e5 lag5" to_port="example set input"/>
+      <connect from_op="Multiply (2)" from_port="output 2" to_op="Lag e5 (6)" to_port="example set input"/>
+      <connect from_op="Filter Examples e5 lag5" from_port="example set output" to_op="Store (3)" to_port="input"/>
+      <connect from_op="Lag e5 (6)" from_port="example set output" to_op="Lag e5 (7)" to_port="example set input"/>
+      <connect from_op="Lag e5 (7)" from_port="example set output" to_op="Lag e5 (8)" to_port="example set input"/>
+      <connect from_op="Lag e5 (8)" from_port="example set output" to_op="Lag e5 (9)" to_port="example set input"/>
+      <connect from_op="Lag e5 (9)" from_port="example set output" to_op="Lag e5 (10)" to_port="example set input"/>
+      <connect from_op="Lag e5 (10)" from_port="example set output" to_op="Filter Examples e5 lag10" to_port="example set input"/>
+      <connect from_op="Filter Examples e5 lag10" from_port="example set output" to_op="Store (4)" to_port="input"/>
+      <connect from_op="Select Attributes e5 (2)" from_port="example set output" to_op="Lag" to_port="example set input"/>
+      <connect from_op="Lag" from_port="example set output" to_op="Lag (2)" to_port="example set input"/>
+      <connect from_op="Lag (2)" from_port="example set output" to_op="Lag (3)" to_port="example set input"/>
+      <connect from_op="Lag (3)" from_port="example set output" to_op="Lag (4)" to_port="example set input"/>
+      <connect from_op="Lag (4)" from_port="example set output" to_op="Lag (5)" to_port="example set input"/>
+      <connect from_op="Lag (5)" from_port="example set output" to_op="Multiply (3)" to_port="input"/>
+      <connect from_op="Multiply (3)" from_port="output 1" to_op="Filter Examples diesel lag5" to_port="example set input"/>
+      <connect from_op="Multiply (3)" from_port="output 2" to_op="Lag (6)" to_port="example set input"/>
+      <connect from_op="Filter Examples diesel lag5" from_port="example set output" to_op="Store (5)" to_port="input"/>
+      <connect from_op="Lag (6)" from_port="example set output" to_op="Lag (7)" to_port="example set input"/>
+      <connect from_op="Lag (7)" from_port="example set output" to_op="Lag (8)" to_port="example set input"/>
+      <connect from_op="Lag (8)" from_port="example set output" to_op="Lag (9)" to_port="example set input"/>
+      <connect from_op="Lag (9)" from_port="example set output" to_op="Lag (10)" to_port="example set input"/>
+      <connect from_op="Lag (10)" from_port="example set output" to_op="Filter Examples e5 lag10 (2)" to_port="example set input"/>
+      <connect from_op="Filter Examples e5 lag10 (2)" from_port="example set output" to_op="Store (6)" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <description align="left" color="red" colored="true" height="103" resized="false" width="591" x="64" y="21">Spezielle Aufbereitung der Daten f&amp;#252;r die Modellierung mit Lagged-Features.&lt;br&gt;&lt;br&gt;Um den zeitlichen Verlauf der Preise mit einzubeziehen werden diese als Lagged-Feature dem Datensatz hinzugef&amp;#252;gt. Den Bereich welcher f&amp;#252;r die Klassifikation Betrachtet wird wurde hierbei einmal auf 5 Tage und einmal auf 10 Tage festgesetzt.</description>
+      <description align="left" color="green" colored="true" height="50" resized="true" width="574" x="299" y="134">Spezielle Aufbereitung f&amp;#252;r e10</description>
+      <description align="left" color="green" colored="true" height="50" resized="false" width="574" x="310" y="475">Spezielle Aufbereitung f&amp;#252;r e5</description>
+      <description align="left" color="green" colored="true" height="50" resized="false" width="574" x="311" y="835">Spezielle Aufbereitung f&amp;#252;r diesel</description>
+    </process>
+  </operator>
+</process>

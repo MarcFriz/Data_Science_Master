@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve URALS" width="90" x="45" y="136">
+        <parameter key="repository_entry" value="../../daten/URALS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve wti-daily" width="90" x="45" y="238">
+        <parameter key="repository_entry" value="../../daten/wti-daily"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples" width="90" x="179" y="238">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="Date.gt.01/01/2018"/>
+          <parameter key="filters_entry_key" value="Date.lt.01/01/2020"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve Brent" width="90" x="45" y="34">
+        <parameter key="repository_entry" value="../../daten/Brent"/>
+      </operator>
+      <operator activated="true" class="concurrency:join" compatibility="9.6.000" expanded="true" height="82" name="Join" width="90" x="447" y="85">
+        <parameter key="remove_double_attributes" value="true"/>
+        <parameter key="join_type" value="inner"/>
+        <parameter key="use_id_attribute_as_key" value="false"/>
+        <list key="key_attributes">
+          <parameter key="Date" value="Date"/>
+        </list>
+        <parameter key="keep_both_join_attributes" value="false"/>
+      </operator>
+      <operator activated="true" class="concurrency:join" compatibility="9.6.000" expanded="true" height="82" name="Join (2)" width="90" x="581" y="136">
+        <parameter key="remove_double_attributes" value="true"/>
+        <parameter key="join_type" value="left"/>
+        <parameter key="use_id_attribute_as_key" value="false"/>
+        <list key="key_attributes">
+          <parameter key="Date" value="Date"/>
+        </list>
+        <parameter key="keep_both_join_attributes" value="false"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="103" name="Multiply (3)" width="90" x="715" y="136"/>
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store (3)" width="90" x="916" y="187">
+        <parameter key="repository_entry" value="../../daten/Oil_complete"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve Fuel 1 Tag" width="90" x="45" y="391">
+        <parameter key="repository_entry" value="../../daten/Fuel 1 Tag"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="103" name="Multiply" width="90" x="179" y="391"/>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples (2)" width="90" x="380" y="442">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="station_uuid.equals.011d59f3-9b7f-4000-863b-c3b815099ff4"/>
+        </list>
+        <parameter key="filters_logic_and" value="false"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve Fuel_2018" width="90" x="45" y="544">
+        <parameter key="repository_entry" value="../../daten/Fuel_2018"/>
+      </operator>
+      <connect from_op="Retrieve URALS" from_port="output" to_op="Join" to_port="right"/>
+      <connect from_op="Retrieve wti-daily" from_port="output" to_op="Filter Examples" to_port="example set input"/>
+      <connect from_op="Filter Examples" from_port="example set output" to_op="Join (2)" to_port="right"/>
+      <connect from_op="Retrieve Brent" from_port="output" to_op="Join" to_port="left"/>
+      <connect from_op="Join" from_port="join" to_op="Join (2)" to_port="left"/>
+      <connect from_op="Join (2)" from_port="join" to_op="Multiply (3)" to_port="input"/>
+      <connect from_op="Multiply (3)" from_port="output 1" to_port="result 1"/>
+      <connect from_op="Multiply (3)" from_port="output 2" to_op="Store (3)" to_port="input"/>
+      <connect from_op="Retrieve Fuel 1 Tag" from_port="output" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_port="result 3"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Filter Examples (2)" to_port="example set input"/>
+      <connect from_op="Filter Examples (2)" from_port="example set output" to_port="result 4"/>
+      <connect from_op="Retrieve Fuel_2018" from_port="output" to_port="result 2"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+      <portSpacing port="sink_result 5" spacing="0"/>
+    </process>
+  </operator>
+</process>
