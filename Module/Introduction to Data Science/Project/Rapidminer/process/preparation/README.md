@@ -57,12 +57,12 @@ Results can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/
 See example process for all stations [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/Data_preparation_label.rmp)
 and for only one station [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/Data_preparation_label_oneStation.rmp)
 
-### Sixth step - Joining Fuel and Oil data:
+### Fifth step - Joining Fuel and Oil data:
 
 - With "append" operator all "fuel-quarter files" are put in one fuel file 2018/2019
 - with "Join" operator fuel and oil are joined to one file with the Date as key.
 
-### Seventh step - labelling:
+### Sixth step - labelling:
 
 - With time series "Lag" operator, three new columns are created that consists of the former
 day's fuel price by choosing the E5,E10 and diesel price columns as subset and adding the default lag "1".
