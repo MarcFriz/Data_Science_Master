@@ -82,3 +82,12 @@ operator excluding all missing values.
 The final prepared data for all stations can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/daten/cleaned/CleanedData_complete.csv)
 
 The final prepared data for only one station can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/daten/cleaned/CleanedData_complete_oneStation.csv)
+
+###Seventh step - Preparation for modelling:
+
+- with "select attributes" operator, the specific fuel (e5,E10, Diesel) is chosen. 
+- Then, the "Lag" operator is used to get a new column for previous prices from 1-10 days, creating 10 new columns.
+
+The process for all stations can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/prepForLag.rmp)
+
+The process for onyl one station can be seen [here]
