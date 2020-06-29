@@ -143,9 +143,7 @@ operator using the functional expression "date_str_custom([Date New],"EEEE""
 - As the data preparation process created a last row with only "?" values, this row is exluded by the "filter examples"
 operator excluding all missing values.
 
-The final prepared data for all stations only April 2019 can be seen [here]
-
-The final prepared data for only one station can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/daten/cleaned/CleanedData_complete_oneStation.csv)
+The final prepared data for all stations only April 2019 can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/Complete_Preparation_exemplary/Data_prepared_exemplary_April2019.rmhdf5table)
 
 
 The final prepared data for all stations can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/daten/cleaned/CleanedData_complete.csv)
