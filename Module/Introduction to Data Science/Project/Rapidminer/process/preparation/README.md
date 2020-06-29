@@ -90,4 +90,4 @@ The final prepared data for only one station can be seen [here](https://github.c
 
 The process for all stations can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/prepForLag.rmp)
 
-The process for onyl one station can be seen [here]
+The process for onyl one station can be seen [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/prepForLag%20one%20Station.rmp)
