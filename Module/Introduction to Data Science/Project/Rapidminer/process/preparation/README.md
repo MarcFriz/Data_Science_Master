@@ -37,7 +37,7 @@ to sort the date later correctly.
 The results can be found [here](https://github.com/Tammy231/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/daten/PreparedQ22019_nolabel_oneStation.rmhdf5table)
 
 ## Data preparation Oil
-### Third step - Joining different Oil Data in one file. See example process [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/Oil_cleaning.rmp)
+### Third step - Joining different Oil Data in one file. See example process [here](https://github.com/MarcFriz/Data_Science_Master/blob/master/Module/Introduction%20to%20Data%20Science/Project/Rapidminer/process/preparation/Oil_cleaning_neu.rmp)
 
 - Joining the different oil data with the date as key. Important here to use the URALS Data set as join type as this data set consits of all dates from 
 2018 and 2019 via the "Join" operator. 
