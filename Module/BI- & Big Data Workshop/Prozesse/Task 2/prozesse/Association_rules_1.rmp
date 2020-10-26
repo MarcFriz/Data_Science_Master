@@ -12,9 +12,6 @@
     <parameter key="process_duration_for_mail" value="30"/>
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
-      <operator activated="false" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve test_c" width="90" x="112" y="136">
-        <parameter key="repository_entry" value="//Task/daten/test_c"/>
-      </operator>
       <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve HdM - Team Europa - Beschde - Sheet1" width="90" x="112" y="289">
         <parameter key="repository_entry" value="../daten/HdM - Team Europa - Beschde - Sheet1"/>
       </operator>
@@ -133,14 +130,15 @@
           <parameter key="filters_entry_key" value="id.does_not_equal.word"/>
           <parameter key="filters_entry_key" value="id.does_not_equal.in documents"/>
           <parameter key="filters_entry_key" value="id.does_not_equal.total"/>
+          <parameter key="filters_entry_key" value="id.does_not_equal.value"/>
         </list>
         <parameter key="filters_logic_and" value="true"/>
         <parameter key="filters_check_metadata" value="true"/>
       </operator>
-      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store" width="90" x="1184" y="340">
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store" width="90" x="1251" y="340">
         <parameter key="repository_entry" value="../daten/test"/>
       </operator>
-      <connect from_op="Retrieve hdm_mittel" from_port="output" to_op="Get Pages" to_port="Example Set"/>
+      <connect from_op="Retrieve HdM - Team Europa - Beschde - Sheet1" from_port="output" to_op="Get Pages" to_port="Example Set"/>
       <connect from_op="Get Pages" from_port="Example Set" to_op="Process Documents from Data" to_port="example set"/>
       <connect from_op="Process Documents from Data" from_port="example set" to_op="Transpose" to_port="example set input"/>
       <connect from_op="Transpose" from_port="example set output" to_op="Join" to_port="left"/>
@@ -152,7 +150,7 @@
       <portSpacing port="source_input 1" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
       <description align="center" color="yellow" colored="false" height="51" resized="true" width="120" x="768" y="457">remove cluster</description>
-      <description align="center" color="yellow" colored="false" height="51" resized="false" width="120" x="1039" y="454">remove join keys</description>
+      <description align="center" color="yellow" colored="false" height="51" resized="false" width="120" x="1050" y="464">remove join keys</description>
     </process>
   </operator>
 </process>

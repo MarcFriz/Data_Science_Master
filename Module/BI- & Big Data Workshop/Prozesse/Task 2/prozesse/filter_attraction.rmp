@@ -17,7 +17,7 @@
       </operator>
       <operator activated="true" class="concurrency:join" compatibility="9.6.000" expanded="true" height="82" name="Join" width="90" x="380" y="85">
         <parameter key="remove_double_attributes" value="true"/>
-        <parameter key="join_type" value="left"/>
+        <parameter key="join_type" value="right"/>
         <parameter key="use_id_attribute_as_key" value="false"/>
         <list key="key_attributes">
           <parameter key="word" value="id"/>

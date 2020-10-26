@@ -123,7 +123,7 @@
         <parameter key="add_cluster_attribute" value="true"/>
         <parameter key="add_as_label" value="false"/>
         <parameter key="remove_unlabeled" value="false"/>
-        <parameter key="k" value="20"/>
+        <parameter key="k" value="5"/>
         <parameter key="max_runs" value="10"/>
         <parameter key="max_optimization_steps" value="100"/>
         <parameter key="use_local_random_seed" value="false"/>
@@ -144,8 +144,8 @@
         <parameter key="kernel_b" value="0.0"/>
       </operator>
       <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="103" name="Multiply (2)" width="90" x="782" y="391"/>
-      <operator activated="true" class="extract_prototypes" compatibility="9.6.000" expanded="true" height="82" name="Extract Cluster Prototypes" width="90" x="916" y="442"/>
-      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples" width="90" x="1050" y="442">
+      <operator activated="true" class="extract_prototypes" compatibility="9.6.000" expanded="true" height="82" name="Extract Cluster Prototypes" width="90" x="983" y="442"/>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples" width="90" x="1117" y="442">
         <parameter key="parameter_expression" value=""/>
         <parameter key="condition_class" value="custom_filters"/>
         <parameter key="invert_filter" value="false"/>
@@ -155,7 +155,7 @@
         <parameter key="filters_logic_and" value="true"/>
         <parameter key="filters_check_metadata" value="true"/>
       </operator>
-      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Process remove NER" width="90" x="1184" y="442">
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Process remove NER" width="90" x="1251" y="442">
         <parameter key="process_location" value="remove_ner"/>
         <parameter key="use_input" value="true"/>
         <parameter key="store_output" value="false"/>
@@ -164,7 +164,7 @@
         <list key="macros"/>
         <parameter key="fail_for_unknown_macros" value="true"/>
       </operator>
-      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples (2)" width="90" x="1318" y="442">
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples (2)" width="90" x="1385" y="442">
         <parameter key="parameter_expression" value=""/>
         <parameter key="condition_class" value="custom_filters"/>
         <parameter key="invert_filter" value="false"/>
@@ -174,11 +174,11 @@
         <parameter key="filters_logic_and" value="true"/>
         <parameter key="filters_check_metadata" value="true"/>
       </operator>
-      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store" width="90" x="1452" y="442">
+      <operator activated="true" class="store" compatibility="9.6.000" expanded="true" height="68" name="Store" width="90" x="1519" y="442">
         <parameter key="repository_entry" value="../daten/POS_verbs_attractions"/>
       </operator>
       <operator activated="true" class="model_simulator:cluster_model_visualizer" compatibility="9.6.000" expanded="true" height="103" name="Cluster Model Visualizer" width="90" x="983" y="289"/>
-      <connect from_op="Retrieve hdm_mittel" from_port="output" to_op="Get Pages" to_port="Example Set"/>
+      <connect from_op="Retrieve HdM - Team Europa - Beschde - Sheet1" from_port="output" to_op="Get Pages" to_port="Example Set"/>
       <connect from_op="Get Pages" from_port="Example Set" to_op="Process Documents from Data" to_port="example set"/>
       <connect from_op="Process Documents from Data" from_port="example set" to_op="Clustering" to_port="example set"/>
       <connect from_op="Process Documents from Data" from_port="word list" to_op="WordList to Data" to_port="word list"/>
@@ -200,7 +200,7 @@
       <portSpacing port="sink_result 3" spacing="0"/>
       <portSpacing port="sink_result 4" spacing="0"/>
       <description align="center" color="yellow" colored="false" height="105" resized="false" width="180" x="637" y="199">Naiver Ansatz mit vor definierten Attraktionen</description>
-      <description align="center" color="yellow" colored="false" height="105" resized="false" width="180" x="660" y="589">Clustering</description>
+      <description align="center" color="yellow" colored="false" height="105" resized="false" width="180" x="608" y="561">Clustering</description>
       <description align="center" color="yellow" colored="false" height="105" resized="false" width="180" x="375" y="194">Unterschiedliche Filter k&amp;#246;nnen hier eingestellt werden</description>
     </process>
   </operator>
