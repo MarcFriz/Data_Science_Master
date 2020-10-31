@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve POS_verbs_attractions" width="90" x="45" y="391">
+        <parameter key="repository_entry" value="../daten/POS_verbs_attractions"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV" width="90" x="179" y="391">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\attraction_by_filter\POS_verbs_attractions.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve POS_nouns_attractions" width="90" x="45" y="289">
+        <parameter key="repository_entry" value="../daten/POS_nouns_attractions"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (2)" width="90" x="179" y="289">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\attraction_by_filter\POS_nouns_attractions.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve POS_adjectives_attractions" width="90" x="45" y="187">
+        <parameter key="repository_entry" value="../daten/POS_adjectives_attractions"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (3)" width="90" x="179" y="187">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\attraction_by_filter\POS_adjectives_attractions.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve Length_attractions" width="90" x="45" y="85">
+        <parameter key="repository_entry" value="../daten/Length_attractions"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (4)" width="90" x="179" y="85">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\attraction_by_filter\Length_attractions.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Retrieve POS_verbs_attractions" from_port="output" to_op="Write CSV" to_port="input"/>
+      <connect from_op="Retrieve POS_nouns_attractions" from_port="output" to_op="Write CSV (2)" to_port="input"/>
+      <connect from_op="Retrieve POS_adjectives_attractions" from_port="output" to_op="Write CSV (3)" to_port="input"/>
+      <connect from_op="Retrieve Length_attractions" from_port="output" to_op="Write CSV (4)" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+    </process>
+  </operator>
+</process>

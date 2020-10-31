@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve HdM - Team Europa - Beschde - Sheet1" width="90" x="45" y="34">
+        <parameter key="repository_entry" value="../daten/HdM - Team Europa - Beschde - Sheet1"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.6.000" expanded="true" height="271" name="Multiply" width="90" x="179" y="34"/>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Switzerland" width="90" x="313" y="952">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Switzerland"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Portugal" width="90" x="313" y="850">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Portugal"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="France" width="90" x="313" y="748">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.France"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Finland" width="90" x="313" y="646">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Finland"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Greece" width="90" x="313" y="544">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Greece"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Ireland" width="90" x="313" y="442">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Ireland"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Poland" width="90" x="313" y="340">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Poland"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Italy" width="90" x="313" y="238">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Italy"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Germany" width="90" x="313" y="136">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Germany"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Romania" width="90" x="313" y="34">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="att3.equals.Romania"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages" width="90" x="447" y="34">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data" width="90" x="581" y="34">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (2)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (2)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (2)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (2)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (2)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (2)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (2)" to_port="document"/>
+          <connect from_op="Extract Content (2)" from_port="document" to_op="Transform Cases (2)" to_port="document"/>
+          <connect from_op="Transform Cases (2)" from_port="document" to_op="Tokenize (2)" to_port="document"/>
+          <connect from_op="Tokenize (2)" from_port="document" to_op="Filter Stopwords (English) (2)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (2)" from_port="document" to_op="Generate n-Grams (Terms)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms)" from_port="document" to_op="Stem (Porter) (2)" to_port="document"/>
+          <connect from_op="Stem (Porter) (2)" from_port="document" to_op="Filter Tokens (by POS Ratios) (2)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (2)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data" width="90" x="715" y="34"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process" width="90" x="849" y="34">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV" width="90" x="983" y="34">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Romania.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (2)" width="90" x="447" y="136">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (2)" width="90" x="581" y="136">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (2)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (2)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content" to_port="document"/>
+          <connect from_op="Extract Content" from_port="document" to_op="Transform Cases" to_port="document"/>
+          <connect from_op="Transform Cases" from_port="document" to_op="Tokenize" to_port="document"/>
+          <connect from_op="Tokenize" from_port="document" to_op="Filter Stopwords (English)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English)" from_port="document" to_op="Generate n-Grams (Terms) (2)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (2)" from_port="document" to_op="Stem (Porter)" to_port="document"/>
+          <connect from_op="Stem (Porter)" from_port="document" to_op="Filter Tokens (by POS Ratios)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (2)" width="90" x="715" y="136"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (2)" width="90" x="849" y="136">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (2)" width="90" x="983" y="136">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Germany.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (3)" width="90" x="447" y="238">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (3)" width="90" x="581" y="238">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (3)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (3)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (3)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (3)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (3)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (3)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (3)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (3)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (3)" to_port="document"/>
+          <connect from_op="Extract Content (3)" from_port="document" to_op="Transform Cases (3)" to_port="document"/>
+          <connect from_op="Transform Cases (3)" from_port="document" to_op="Tokenize (3)" to_port="document"/>
+          <connect from_op="Tokenize (3)" from_port="document" to_op="Filter Stopwords (English) (3)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (3)" from_port="document" to_op="Generate n-Grams (Terms) (3)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (3)" from_port="document" to_op="Stem (Porter) (3)" to_port="document"/>
+          <connect from_op="Stem (Porter) (3)" from_port="document" to_op="Filter Tokens (by POS Ratios) (3)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (3)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (3)" width="90" x="715" y="238"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (3)" width="90" x="849" y="238">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (3)" width="90" x="983" y="238">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Italy.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (4)" width="90" x="447" y="340">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (4)" width="90" x="581" y="340">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (4)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (4)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (4)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (4)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (4)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (4)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (4)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (4)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (4)" to_port="document"/>
+          <connect from_op="Extract Content (4)" from_port="document" to_op="Transform Cases (4)" to_port="document"/>
+          <connect from_op="Transform Cases (4)" from_port="document" to_op="Tokenize (4)" to_port="document"/>
+          <connect from_op="Tokenize (4)" from_port="document" to_op="Filter Stopwords (English) (4)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (4)" from_port="document" to_op="Generate n-Grams (Terms) (4)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (4)" from_port="document" to_op="Stem (Porter) (4)" to_port="document"/>
+          <connect from_op="Stem (Porter) (4)" from_port="document" to_op="Filter Tokens (by POS Ratios) (4)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (4)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (4)" width="90" x="715" y="340"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (4)" width="90" x="849" y="340">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (4)" width="90" x="983" y="340">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Poland.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (5)" width="90" x="447" y="442">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (5)" width="90" x="581" y="442">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (5)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (5)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (5)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (5)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (5)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (5)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (5)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (5)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (5)" to_port="document"/>
+          <connect from_op="Extract Content (5)" from_port="document" to_op="Transform Cases (5)" to_port="document"/>
+          <connect from_op="Transform Cases (5)" from_port="document" to_op="Tokenize (5)" to_port="document"/>
+          <connect from_op="Tokenize (5)" from_port="document" to_op="Filter Stopwords (English) (5)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (5)" from_port="document" to_op="Generate n-Grams (Terms) (5)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (5)" from_port="document" to_op="Stem (Porter) (5)" to_port="document"/>
+          <connect from_op="Stem (Porter) (5)" from_port="document" to_op="Filter Tokens (by POS Ratios) (5)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (5)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (5)" width="90" x="715" y="442"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (5)" width="90" x="849" y="442">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (5)" width="90" x="983" y="442">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Ireland.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (6)" width="90" x="447" y="544">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (6)" width="90" x="581" y="544">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (6)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (6)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (6)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (6)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (6)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (6)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (6)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (6)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (6)" to_port="document"/>
+          <connect from_op="Extract Content (6)" from_port="document" to_op="Transform Cases (6)" to_port="document"/>
+          <connect from_op="Transform Cases (6)" from_port="document" to_op="Tokenize (6)" to_port="document"/>
+          <connect from_op="Tokenize (6)" from_port="document" to_op="Filter Stopwords (English) (6)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (6)" from_port="document" to_op="Generate n-Grams (Terms) (6)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (6)" from_port="document" to_op="Stem (Porter) (6)" to_port="document"/>
+          <connect from_op="Stem (Porter) (6)" from_port="document" to_op="Filter Tokens (by POS Ratios) (6)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (6)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (6)" width="90" x="715" y="544"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (6)" width="90" x="849" y="544">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (6)" width="90" x="983" y="544">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Greece.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (7)" width="90" x="447" y="646">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (7)" width="90" x="581" y="646">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (7)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (7)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (7)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (7)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (7)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (7)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (7)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (7)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (7)" to_port="document"/>
+          <connect from_op="Extract Content (7)" from_port="document" to_op="Transform Cases (7)" to_port="document"/>
+          <connect from_op="Transform Cases (7)" from_port="document" to_op="Tokenize (7)" to_port="document"/>
+          <connect from_op="Tokenize (7)" from_port="document" to_op="Filter Stopwords (English) (7)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (7)" from_port="document" to_op="Generate n-Grams (Terms) (7)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (7)" from_port="document" to_op="Stem (Porter) (7)" to_port="document"/>
+          <connect from_op="Stem (Porter) (7)" from_port="document" to_op="Filter Tokens (by POS Ratios) (7)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (7)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (7)" width="90" x="715" y="646"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (7)" width="90" x="849" y="646">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (7)" width="90" x="983" y="646">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Finland.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (8)" width="90" x="447" y="748">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (8)" width="90" x="581" y="748">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (8)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (8)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (8)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (8)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (8)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (8)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (8)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (8)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (8)" to_port="document"/>
+          <connect from_op="Extract Content (8)" from_port="document" to_op="Transform Cases (8)" to_port="document"/>
+          <connect from_op="Transform Cases (8)" from_port="document" to_op="Tokenize (8)" to_port="document"/>
+          <connect from_op="Tokenize (8)" from_port="document" to_op="Filter Stopwords (English) (8)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (8)" from_port="document" to_op="Generate n-Grams (Terms) (8)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (8)" from_port="document" to_op="Stem (Porter) (8)" to_port="document"/>
+          <connect from_op="Stem (Porter) (8)" from_port="document" to_op="Filter Tokens (by POS Ratios) (8)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (8)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (8)" width="90" x="715" y="748"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (8)" width="90" x="849" y="748">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (8)" width="90" x="983" y="748">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\France.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (9)" width="90" x="447" y="850">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (9)" width="90" x="581" y="850">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (9)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (9)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (9)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (9)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (9)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (9)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (9)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (9)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (9)" to_port="document"/>
+          <connect from_op="Extract Content (9)" from_port="document" to_op="Transform Cases (9)" to_port="document"/>
+          <connect from_op="Transform Cases (9)" from_port="document" to_op="Tokenize (9)" to_port="document"/>
+          <connect from_op="Tokenize (9)" from_port="document" to_op="Filter Stopwords (English) (9)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (9)" from_port="document" to_op="Generate n-Grams (Terms) (9)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (9)" from_port="document" to_op="Stem (Porter) (9)" to_port="document"/>
+          <connect from_op="Stem (Porter) (9)" from_port="document" to_op="Filter Tokens (by POS Ratios) (9)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (9)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (9)" width="90" x="715" y="850"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (9)" width="90" x="849" y="850">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (9)" width="90" x="983" y="850">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Portugal.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages (10)" width="90" x="447" y="952">
+        <parameter key="link_attribute" value="att5"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data (10)" width="90" x="581" y="952">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="TF-IDF"/>
+        <parameter key="add_meta_information" value="false"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="by ranking"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_absolute" value="2"/>
+        <parameter key="prune_below_rank" value="0.2"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (10)" width="90" x="179" y="136">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (10)" width="90" x="313" y="136">
+            <parameter key="transform_to" value="lower case"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (10)" width="90" x="447" y="136">
+            <parameter key="mode" value="non letters"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (10)" width="90" x="581" y="136"/>
+          <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms) (10)" width="90" x="715" y="136">
+            <parameter key="max_length" value="2"/>
+          </operator>
+          <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (10)" width="90" x="849" y="136"/>
+          <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length) (10)" width="90" x="983" y="238">
+            <parameter key="min_chars" value="4"/>
+            <parameter key="max_chars" value="10"/>
+          </operator>
+          <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (10)" width="90" x="983" y="136">
+            <parameter key="language_source" value="user"/>
+            <parameter key="language" value="English"/>
+            <parameter key="language_attribute" value="language"/>
+            <parameter key="min_ratio_adjectives" value="0.0"/>
+            <parameter key="min_ratio_nouns" value="0.5"/>
+            <parameter key="min_ratio_verbs" value="0.0"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content (10)" to_port="document"/>
+          <connect from_op="Extract Content (10)" from_port="document" to_op="Transform Cases (10)" to_port="document"/>
+          <connect from_op="Transform Cases (10)" from_port="document" to_op="Tokenize (10)" to_port="document"/>
+          <connect from_op="Tokenize (10)" from_port="document" to_op="Filter Stopwords (English) (10)" to_port="document"/>
+          <connect from_op="Filter Stopwords (English) (10)" from_port="document" to_op="Generate n-Grams (Terms) (10)" to_port="document"/>
+          <connect from_op="Generate n-Grams (Terms) (10)" from_port="document" to_op="Stem (Porter) (10)" to_port="document"/>
+          <connect from_op="Stem (Porter) (10)" from_port="document" to_op="Filter Tokens (by POS Ratios) (10)" to_port="document"/>
+          <connect from_op="Filter Tokens (by POS Ratios) (10)" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data (10)" width="90" x="715" y="952"/>
+      <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process (10)" width="90" x="849" y="952">
+        <parameter key="process_location" value="filter_attraction"/>
+        <parameter key="use_input" value="true"/>
+        <parameter key="store_output" value="false"/>
+        <parameter key="propagate_metadata_recursively" value="true"/>
+        <parameter key="cache_process" value="true"/>
+        <list key="macros"/>
+        <parameter key="fail_for_unknown_macros" value="true"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (10)" width="90" x="983" y="952">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\top_attraction_by_country\2gram\Switzerland.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Retrieve HdM - Team Europa - Beschde - Sheet1" from_port="output" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_op="Romania" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Germany" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 3" to_op="Italy" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 4" to_op="Poland" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 5" to_op="Ireland" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 6" to_op="Greece" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 7" to_op="Finland" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 8" to_op="France" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 9" to_op="Portugal" to_port="example set input"/>
+      <connect from_op="Multiply" from_port="output 10" to_op="Switzerland" to_port="example set input"/>
+      <connect from_op="Switzerland" from_port="example set output" to_op="Get Pages (10)" to_port="Example Set"/>
+      <connect from_op="Portugal" from_port="example set output" to_op="Get Pages (9)" to_port="Example Set"/>
+      <connect from_op="France" from_port="example set output" to_op="Get Pages (8)" to_port="Example Set"/>
+      <connect from_op="Finland" from_port="example set output" to_op="Get Pages (7)" to_port="Example Set"/>
+      <connect from_op="Greece" from_port="example set output" to_op="Get Pages (6)" to_port="Example Set"/>
+      <connect from_op="Ireland" from_port="example set output" to_op="Get Pages (5)" to_port="Example Set"/>
+      <connect from_op="Poland" from_port="example set output" to_op="Get Pages (4)" to_port="Example Set"/>
+      <connect from_op="Italy" from_port="example set output" to_op="Get Pages (3)" to_port="Example Set"/>
+      <connect from_op="Germany" from_port="example set output" to_op="Get Pages (2)" to_port="Example Set"/>
+      <connect from_op="Romania" from_port="example set output" to_op="Get Pages" to_port="Example Set"/>
+      <connect from_op="Get Pages" from_port="Example Set" to_op="Process Documents from Data" to_port="example set"/>
+      <connect from_op="Process Documents from Data" from_port="word list" to_op="WordList to Data" to_port="word list"/>
+      <connect from_op="WordList to Data" from_port="example set" to_op="Execute Process" to_port="input 1"/>
+      <connect from_op="Execute Process" from_port="result 1" to_op="Write CSV" to_port="input"/>
+      <connect from_op="Get Pages (2)" from_port="Example Set" to_op="Process Documents from Data (2)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (2)" from_port="word list" to_op="WordList to Data (2)" to_port="word list"/>
+      <connect from_op="WordList to Data (2)" from_port="example set" to_op="Execute Process (2)" to_port="input 1"/>
+      <connect from_op="Execute Process (2)" from_port="result 1" to_op="Write CSV (2)" to_port="input"/>
+      <connect from_op="Get Pages (3)" from_port="Example Set" to_op="Process Documents from Data (3)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (3)" from_port="word list" to_op="WordList to Data (3)" to_port="word list"/>
+      <connect from_op="WordList to Data (3)" from_port="example set" to_op="Execute Process (3)" to_port="input 1"/>
+      <connect from_op="Execute Process (3)" from_port="result 1" to_op="Write CSV (3)" to_port="input"/>
+      <connect from_op="Get Pages (4)" from_port="Example Set" to_op="Process Documents from Data (4)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (4)" from_port="word list" to_op="WordList to Data (4)" to_port="word list"/>
+      <connect from_op="WordList to Data (4)" from_port="example set" to_op="Execute Process (4)" to_port="input 1"/>
+      <connect from_op="Execute Process (4)" from_port="result 1" to_op="Write CSV (4)" to_port="input"/>
+      <connect from_op="Get Pages (5)" from_port="Example Set" to_op="Process Documents from Data (5)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (5)" from_port="word list" to_op="WordList to Data (5)" to_port="word list"/>
+      <connect from_op="WordList to Data (5)" from_port="example set" to_op="Execute Process (5)" to_port="input 1"/>
+      <connect from_op="Execute Process (5)" from_port="result 1" to_op="Write CSV (5)" to_port="input"/>
+      <connect from_op="Get Pages (6)" from_port="Example Set" to_op="Process Documents from Data (6)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (6)" from_port="word list" to_op="WordList to Data (6)" to_port="word list"/>
+      <connect from_op="WordList to Data (6)" from_port="example set" to_op="Execute Process (6)" to_port="input 1"/>
+      <connect from_op="Execute Process (6)" from_port="result 1" to_op="Write CSV (6)" to_port="input"/>
+      <connect from_op="Get Pages (7)" from_port="Example Set" to_op="Process Documents from Data (7)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (7)" from_port="word list" to_op="WordList to Data (7)" to_port="word list"/>
+      <connect from_op="WordList to Data (7)" from_port="example set" to_op="Execute Process (7)" to_port="input 1"/>
+      <connect from_op="Execute Process (7)" from_port="result 1" to_op="Write CSV (7)" to_port="input"/>
+      <connect from_op="Get Pages (8)" from_port="Example Set" to_op="Process Documents from Data (8)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (8)" from_port="word list" to_op="WordList to Data (8)" to_port="word list"/>
+      <connect from_op="WordList to Data (8)" from_port="example set" to_op="Execute Process (8)" to_port="input 1"/>
+      <connect from_op="Execute Process (8)" from_port="result 1" to_op="Write CSV (8)" to_port="input"/>
+      <connect from_op="Get Pages (9)" from_port="Example Set" to_op="Process Documents from Data (9)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (9)" from_port="word list" to_op="WordList to Data (9)" to_port="word list"/>
+      <connect from_op="WordList to Data (9)" from_port="example set" to_op="Execute Process (9)" to_port="input 1"/>
+      <connect from_op="Execute Process (9)" from_port="result 1" to_op="Write CSV (9)" to_port="input"/>
+      <connect from_op="Get Pages (10)" from_port="Example Set" to_op="Process Documents from Data (10)" to_port="example set"/>
+      <connect from_op="Process Documents from Data (10)" from_port="word list" to_op="WordList to Data (10)" to_port="word list"/>
+      <connect from_op="WordList to Data (10)" from_port="example set" to_op="Execute Process (10)" to_port="input 1"/>
+      <connect from_op="Execute Process (10)" from_port="result 1" to_op="Write CSV (10)" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <description align="left" color="yellow" colored="false" height="105" resized="false" width="180" x="811" y="1048">Prozess: filter_attraction&lt;br&gt;&lt;br&gt;Beschreibung: nur die bekannten Attraktionen bleiben bestehen</description>
+      <description align="left" color="yellow" colored="false" height="121" resized="false" width="180" x="537" y="1047">Prozess: Process Documents&lt;br/&gt;&lt;br/&gt;Beschreibung: Single und 2-gramm k&amp;#246;nnen hier eingestellt werden</description>
+    </process>
+  </operator>
+</process>
