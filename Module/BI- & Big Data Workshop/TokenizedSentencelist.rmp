@@ -13,7 +13,7 @@
     <parameter key="encoding" value="SYSTEM"/>
     <process expanded="true">
       <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve Countries.csv" width="90" x="45" y="34">
-        <parameter key="repository_entry" value="../Data/Countries.csv"/>
+        <parameter key="repository_entry" value="Countries.csv"/>
       </operator>
       <operator activated="true" class="work_on_subset" compatibility="9.8.000" expanded="true" height="82" name="Work on Subset" width="90" x="179" y="34">
         <parameter key="attribute_filter_type" value="single"/>
@@ -54,7 +54,7 @@
         <parameter key="min_delay_amount" value="0"/>
         <parameter key="max_delay_amount" value="1000"/>
       </operator>
-      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data" width="90" x="112" y="136">
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data" width="90" x="179" y="136">
         <parameter key="create_word_vector" value="true"/>
         <parameter key="vector_creation" value="Binary Term Occurrences"/>
         <parameter key="add_meta_information" value="true"/>
@@ -114,6 +114,7 @@
       <connect from_op="Get Pages" from_port="Example Set" to_op="Process Documents from Data" to_port="example set"/>
       <connect from_op="Process Documents from Data" from_port="example set" to_op="Multiply" to_port="input"/>
       <connect from_op="Process Documents from Data" from_port="word list" to_op="WordList to Data" to_port="word list"/>
+      <connect from_op="WordList to Data" from_port="word list" to_port="result 2"/>
       <connect from_op="WordList to Data" from_port="example set" to_op="Store" to_port="input"/>
       <connect from_op="Multiply" from_port="output 1" to_op="Set Role" to_port="example set input"/>
       <connect from_op="Multiply" from_port="output 2" to_op="Store (2)" to_port="input"/>
@@ -121,6 +122,7 @@
       <portSpacing port="source_input 1" spacing="0"/>
       <portSpacing port="sink_result 1" spacing="0"/>
       <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
     </process>
   </operator>
 </process>
