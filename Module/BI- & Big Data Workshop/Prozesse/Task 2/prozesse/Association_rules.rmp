@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.6.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.6.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.6.000" expanded="true" height="68" name="Retrieve alle" width="90" x="112" y="136">
+        <parameter key="repository_entry" value="../daten/alle_seiten_links"/>
+      </operator>
+      <operator activated="true" class="concurrency:loop" compatibility="9.6.000" expanded="true" height="82" name="Loop" width="90" x="313" y="187">
+        <parameter key="number_of_iterations" value="100"/>
+        <parameter key="iteration_macro" value="iteration"/>
+        <parameter key="reuse_results" value="false"/>
+        <parameter key="enable_parallel_execution" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples" width="90" x="179" y="85">
+            <parameter key="parameter_expression" value=""/>
+            <parameter key="condition_class" value="custom_filters"/>
+            <parameter key="invert_filter" value="false"/>
+            <list key="filters_list">
+              <parameter key="filters_entry_key" value="Bearbeiter.eq.%{iteration}"/>
+            </list>
+            <parameter key="filters_logic_and" value="true"/>
+            <parameter key="filters_check_metadata" value="true"/>
+          </operator>
+          <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages" width="90" x="313" y="85">
+            <parameter key="link_attribute" value="roughguide_link"/>
+            <parameter key="random_user_agent" value="false"/>
+            <parameter key="connection_timeout" value="10000"/>
+            <parameter key="read_timeout" value="10000"/>
+            <parameter key="follow_redirects" value="true"/>
+            <parameter key="accept_cookies" value="none"/>
+            <parameter key="cookie_scope" value="global"/>
+            <parameter key="request_method" value="GET"/>
+            <parameter key="delay" value="none"/>
+            <parameter key="delay_amount" value="1000"/>
+            <parameter key="min_delay_amount" value="0"/>
+            <parameter key="max_delay_amount" value="1000"/>
+          </operator>
+          <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data" width="90" x="447" y="85">
+            <parameter key="create_word_vector" value="true"/>
+            <parameter key="vector_creation" value="TF-IDF"/>
+            <parameter key="add_meta_information" value="false"/>
+            <parameter key="keep_text" value="false"/>
+            <parameter key="prune_method" value="by ranking"/>
+            <parameter key="prune_below_percent" value="3.0"/>
+            <parameter key="prune_above_percent" value="30.0"/>
+            <parameter key="prune_below_absolute" value="2"/>
+            <parameter key="prune_below_rank" value="0.2"/>
+            <parameter key="prune_above_rank" value="0.95"/>
+            <parameter key="datamanagement" value="double_sparse_array"/>
+            <parameter key="data_management" value="auto"/>
+            <parameter key="select_attributes_and_weights" value="false"/>
+            <list key="specify_weights"/>
+            <process expanded="true">
+              <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content (2)" width="90" x="179" y="136">
+                <parameter key="extract_content" value="true"/>
+                <parameter key="minimum_text_block_length" value="5"/>
+                <parameter key="override_content_type_information" value="true"/>
+                <parameter key="neglegt_span_tags" value="true"/>
+                <parameter key="neglect_p_tags" value="true"/>
+                <parameter key="neglect_b_tags" value="true"/>
+                <parameter key="neglect_i_tags" value="true"/>
+                <parameter key="neglect_br_tags" value="true"/>
+                <parameter key="ignore_non_html_tags" value="true"/>
+              </operator>
+              <operator activated="true" class="text:transform_cases" compatibility="9.3.001" expanded="true" height="68" name="Transform Cases (2)" width="90" x="313" y="136">
+                <parameter key="transform_to" value="lower case"/>
+              </operator>
+              <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize (2)" width="90" x="447" y="136">
+                <parameter key="mode" value="non letters"/>
+                <parameter key="characters" value=".:"/>
+                <parameter key="language" value="English"/>
+                <parameter key="max_token_length" value="3"/>
+              </operator>
+              <operator activated="true" class="text:filter_stopwords_english" compatibility="9.3.001" expanded="true" height="68" name="Filter Stopwords (English) (2)" width="90" x="581" y="136"/>
+              <operator activated="true" class="text:generate_n_grams_terms" compatibility="9.3.001" expanded="true" height="68" name="Generate n-Grams (Terms)" width="90" x="715" y="136">
+                <parameter key="max_length" value="2"/>
+              </operator>
+              <operator activated="true" class="text:stem_porter" compatibility="9.3.001" expanded="true" height="68" name="Stem (Porter) (2)" width="90" x="849" y="136"/>
+              <operator activated="false" class="text:filter_by_length" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by Length)" width="90" x="983" y="238">
+                <parameter key="min_chars" value="4"/>
+                <parameter key="max_chars" value="10"/>
+              </operator>
+              <operator activated="true" class="text:filter_tokens_by_pos_ratios" compatibility="9.3.001" expanded="true" height="68" name="Filter Tokens (by POS Ratios) (2)" width="90" x="983" y="136">
+                <parameter key="language_source" value="user"/>
+                <parameter key="language" value="English"/>
+                <parameter key="language_attribute" value="language"/>
+                <parameter key="min_ratio_adjectives" value="0.0"/>
+                <parameter key="min_ratio_nouns" value="0.5"/>
+                <parameter key="min_ratio_verbs" value="0.0"/>
+              </operator>
+              <connect from_port="document" to_op="Extract Content (2)" to_port="document"/>
+              <connect from_op="Extract Content (2)" from_port="document" to_op="Transform Cases (2)" to_port="document"/>
+              <connect from_op="Transform Cases (2)" from_port="document" to_op="Tokenize (2)" to_port="document"/>
+              <connect from_op="Tokenize (2)" from_port="document" to_op="Filter Stopwords (English) (2)" to_port="document"/>
+              <connect from_op="Filter Stopwords (English) (2)" from_port="document" to_op="Generate n-Grams (Terms)" to_port="document"/>
+              <connect from_op="Generate n-Grams (Terms)" from_port="document" to_op="Stem (Porter) (2)" to_port="document"/>
+              <connect from_op="Stem (Porter) (2)" from_port="document" to_op="Filter Tokens (by POS Ratios) (2)" to_port="document"/>
+              <connect from_op="Filter Tokens (by POS Ratios) (2)" from_port="document" to_port="document 1"/>
+              <portSpacing port="source_document" spacing="0"/>
+              <portSpacing port="sink_document 1" spacing="0"/>
+              <portSpacing port="sink_document 2" spacing="0"/>
+            </process>
+          </operator>
+          <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data" width="90" x="581" y="85"/>
+          <operator activated="true" class="productivity:execute_process" compatibility="9.6.000" expanded="true" height="68" name="Execute Process" width="90" x="715" y="85">
+            <parameter key="process_location" value="filter_attraction"/>
+            <parameter key="use_input" value="true"/>
+            <parameter key="store_output" value="false"/>
+            <parameter key="propagate_metadata_recursively" value="true"/>
+            <parameter key="cache_process" value="true"/>
+            <list key="macros"/>
+            <parameter key="fail_for_unknown_macros" value="true"/>
+          </operator>
+          <operator activated="true" class="filter_examples" compatibility="9.6.000" expanded="true" height="103" name="Filter Examples (2)" width="90" x="849" y="85">
+            <parameter key="parameter_expression" value=""/>
+            <parameter key="condition_class" value="custom_filters"/>
+            <parameter key="invert_filter" value="false"/>
+            <list key="filters_list">
+              <parameter key="filters_entry_key" value="total.gt.0"/>
+            </list>
+            <parameter key="filters_logic_and" value="true"/>
+            <parameter key="filters_check_metadata" value="true"/>
+          </operator>
+          <operator activated="true" class="python_scripting:execute_python" compatibility="9.6.000" expanded="true" height="103" name="Execute Python" width="90" x="983" y="85">
+            <parameter key="script" value="import pandas as pd&#10;&#10;# rm_main is a mandatory function, &#10;# the number of arguments has to be the number of input ports (can be none),&#10;#     or the number of input ports plus one if &quot;use macros&quot; parameter is set&#10;# if you want to use macros, use this instead and check &quot;use macros&quot; parameter:&#10;#def rm_main(data,macros):&#10;def rm_main(data):&#10;    df = data&#10;    i = 0&#10;    s = &quot;&quot;&#10;&#10;    for index, row in df.iterrows():&#10;        if i != 0:&#10;            s = s + &quot;|&quot; + row[0]&#10;        else:&#10;            s = row[0]&#10;            i = i+1&#10;&#10;    x = pd.DataFrame({'attractions': [s]})&#10;    return x"/>
+            <parameter key="notebook_cell_tag_filter" value=""/>
+            <parameter key="use_default_python" value="true"/>
+            <parameter key="package_manager" value="conda (anaconda)"/>
+            <parameter key="use_macros" value="false"/>
+          </operator>
+          <connect from_port="input 1" to_op="Filter Examples" to_port="example set input"/>
+          <connect from_op="Filter Examples" from_port="example set output" to_op="Get Pages" to_port="Example Set"/>
+          <connect from_op="Get Pages" from_port="Example Set" to_op="Process Documents from Data" to_port="example set"/>
+          <connect from_op="Process Documents from Data" from_port="word list" to_op="WordList to Data" to_port="word list"/>
+          <connect from_op="WordList to Data" from_port="example set" to_op="Execute Process" to_port="input 1"/>
+          <connect from_op="Execute Process" from_port="result 1" to_op="Filter Examples (2)" to_port="example set input"/>
+          <connect from_op="Filter Examples (2)" from_port="example set output" to_op="Execute Python" to_port="input 1"/>
+          <connect from_op="Execute Python" from_port="output 1" to_port="output 1"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="append" compatibility="9.6.000" expanded="true" height="82" name="Append" width="90" x="514" y="187">
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="merge_type" value="all"/>
+      </operator>
+      <operator activated="true" class="concurrency:fp_growth" compatibility="9.6.000" expanded="true" height="82" name="FP-Growth (2)" width="90" x="782" y="187">
+        <parameter key="input_format" value="item list in a column"/>
+        <parameter key="item_separators" value="|"/>
+        <parameter key="use_quotes" value="false"/>
+        <parameter key="quotes_character" value="&quot;"/>
+        <parameter key="escape_character" value="\"/>
+        <parameter key="trim_item_names" value="true"/>
+        <parameter key="min_requirement" value="support"/>
+        <parameter key="min_support" value="0.1"/>
+        <parameter key="min_frequency" value="100"/>
+        <parameter key="min_items_per_itemset" value="1"/>
+        <parameter key="max_items_per_itemset" value="0"/>
+        <parameter key="max_number_of_itemsets" value="1000000"/>
+        <parameter key="find_min_number_of_itemsets" value="true"/>
+        <parameter key="min_number_of_itemsets" value="100"/>
+        <parameter key="max_number_of_retries" value="15"/>
+        <parameter key="requirement_decrease_factor" value="0.9"/>
+        <enumeration key="must_contain_list"/>
+      </operator>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV" width="90" x="1050" y="85">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\FP-Growth.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="create_association_rules" compatibility="9.6.000" expanded="true" height="82" name="Create Association Rules (2)" width="90" x="983" y="187">
+        <parameter key="criterion" value="confidence"/>
+        <parameter key="min_confidence" value="0.95"/>
+        <parameter key="min_criterion_value" value="0.8"/>
+        <parameter key="gain_theta" value="2.0"/>
+        <parameter key="laplace_k" value="1.0"/>
+      </operator>
+      <operator activated="true" class="converters:rules_2_example_set" compatibility="0.8.001" expanded="true" height="103" name="Association Rules to ExampleSet" width="90" x="1117" y="187"/>
+      <operator activated="true" class="write_csv" compatibility="9.6.000" expanded="true" height="82" name="Write CSV (2)" width="90" x="1251" y="187">
+        <parameter key="csv_file" value="D:\Studium\Master\Data_Science_Master\Module\BI- &amp; Big Data Workshop\Prozesse\Task 2\daten\output\association_rules.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <connect from_op="Retrieve alle" from_port="output" to_op="Loop" to_port="input 1"/>
+      <connect from_op="Loop" from_port="output 1" to_op="Append" to_port="example set 1"/>
+      <connect from_op="Append" from_port="merged set" to_op="FP-Growth (2)" to_port="example set"/>
+      <connect from_op="FP-Growth (2)" from_port="example set" to_op="Write CSV" to_port="input"/>
+      <connect from_op="FP-Growth (2)" from_port="frequent sets" to_op="Create Association Rules (2)" to_port="item sets"/>
+      <connect from_op="Create Association Rules (2)" from_port="rules" to_op="Association Rules to ExampleSet" to_port="rules input"/>
+      <connect from_op="Association Rules to ExampleSet" from_port="example set" to_op="Write CSV (2)" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <description align="center" color="yellow" colored="false" height="105" resized="false" width="180" x="265" y="307">Hier wird &amp;#252;ber alle Seiten geschaut um die attractions pro Seite zu extrahieren</description>
+      <description align="center" color="yellow" colored="false" height="105" resized="false" width="180" x="803" y="302">Assosiation der Attractions</description>
+    </process>
+  </operator>
+</process>
