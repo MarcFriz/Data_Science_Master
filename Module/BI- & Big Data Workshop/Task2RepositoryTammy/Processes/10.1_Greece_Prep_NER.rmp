@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.8.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.8.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 00_Countries.csv" width="90" x="45" y="85">
+        <parameter key="repository_entry" value="../Data/00_Countries.csv"/>
+      </operator>
+      <operator activated="true" class="filter_examples" compatibility="9.8.000" expanded="true" height="103" name="Filter Examples" width="90" x="246" y="85">
+        <parameter key="parameter_expression" value=""/>
+        <parameter key="condition_class" value="custom_filters"/>
+        <parameter key="invert_filter" value="false"/>
+        <list key="filters_list">
+          <parameter key="filters_entry_key" value="country.equals.Greece"/>
+        </list>
+        <parameter key="filters_logic_and" value="true"/>
+        <parameter key="filters_check_metadata" value="true"/>
+      </operator>
+      <operator activated="true" class="web:retrieve_webpages" compatibility="9.3.001" expanded="true" height="68" name="Get Pages" width="90" x="380" y="85">
+        <parameter key="link_attribute" value="link"/>
+        <parameter key="random_user_agent" value="false"/>
+        <parameter key="connection_timeout" value="10000"/>
+        <parameter key="read_timeout" value="10000"/>
+        <parameter key="follow_redirects" value="true"/>
+        <parameter key="accept_cookies" value="none"/>
+        <parameter key="cookie_scope" value="global"/>
+        <parameter key="request_method" value="GET"/>
+        <parameter key="delay" value="none"/>
+        <parameter key="delay_amount" value="1000"/>
+        <parameter key="min_delay_amount" value="0"/>
+        <parameter key="max_delay_amount" value="1000"/>
+      </operator>
+      <operator activated="true" class="text:process_document_from_data" compatibility="9.3.001" expanded="true" height="82" name="Process Documents from Data" width="90" x="648" y="85">
+        <parameter key="create_word_vector" value="true"/>
+        <parameter key="vector_creation" value="Term Occurrences"/>
+        <parameter key="add_meta_information" value="true"/>
+        <parameter key="keep_text" value="false"/>
+        <parameter key="prune_method" value="none"/>
+        <parameter key="prune_below_percent" value="3.0"/>
+        <parameter key="prune_above_percent" value="30.0"/>
+        <parameter key="prune_below_rank" value="0.05"/>
+        <parameter key="prune_above_rank" value="0.95"/>
+        <parameter key="datamanagement" value="double_sparse_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="select_attributes_and_weights" value="false"/>
+        <list key="specify_weights"/>
+        <process expanded="true">
+          <operator activated="true" class="web:extract_html_text_content" compatibility="9.3.001" expanded="true" height="68" name="Extract Content" width="90" x="112" y="34">
+            <parameter key="extract_content" value="true"/>
+            <parameter key="minimum_text_block_length" value="5"/>
+            <parameter key="override_content_type_information" value="true"/>
+            <parameter key="neglegt_span_tags" value="true"/>
+            <parameter key="neglect_p_tags" value="true"/>
+            <parameter key="neglect_b_tags" value="true"/>
+            <parameter key="neglect_i_tags" value="true"/>
+            <parameter key="neglect_br_tags" value="true"/>
+            <parameter key="ignore_non_html_tags" value="true"/>
+          </operator>
+          <operator activated="true" class="text:tokenize" compatibility="9.3.001" expanded="true" height="68" name="Tokenize" width="90" x="313" y="34">
+            <parameter key="mode" value="linguistic sentences"/>
+            <parameter key="characters" value=".:"/>
+            <parameter key="language" value="English"/>
+            <parameter key="max_token_length" value="3"/>
+          </operator>
+          <connect from_port="document" to_op="Extract Content" to_port="document"/>
+          <connect from_op="Extract Content" from_port="document" to_op="Tokenize" to_port="document"/>
+          <connect from_op="Tokenize" from_port="document" to_port="document 1"/>
+          <portSpacing port="source_document" spacing="0"/>
+          <portSpacing port="sink_document 1" spacing="0"/>
+          <portSpacing port="sink_document 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="text:wordlist_to_data" compatibility="9.3.001" expanded="true" height="82" name="WordList to Data" width="90" x="45" y="340"/>
+      <operator activated="true" class="generate_empty_attribute" compatibility="9.8.000" expanded="true" height="82" name="Generate Empty Attribute" width="90" x="179" y="340">
+        <parameter key="name" value="Country"/>
+        <parameter key="value_type" value="text"/>
+      </operator>
+      <operator activated="true" class="replace_missing_values" compatibility="9.8.000" expanded="true" height="103" name="Replace Missing Values" width="90" x="380" y="340">
+        <parameter key="return_preprocessing_model" value="false"/>
+        <parameter key="create_view" value="false"/>
+        <parameter key="attribute_filter_type" value="single"/>
+        <parameter key="attribute" value="Country"/>
+        <parameter key="attributes" value=""/>
+        <parameter key="use_except_expression" value="false"/>
+        <parameter key="value_type" value="attribute_value"/>
+        <parameter key="use_value_type_exception" value="false"/>
+        <parameter key="except_value_type" value="time"/>
+        <parameter key="block_type" value="attribute_block"/>
+        <parameter key="use_block_type_exception" value="false"/>
+        <parameter key="except_block_type" value="value_matrix_row_start"/>
+        <parameter key="invert_selection" value="false"/>
+        <parameter key="include_special_attributes" value="false"/>
+        <parameter key="default" value="value"/>
+        <list key="columns"/>
+        <parameter key="replenishment_value" value="Greece"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.8.000" expanded="true" height="103" name="Multiply" width="90" x="514" y="340"/>
+      <operator activated="true" class="store" compatibility="9.8.000" expanded="true" height="68" name="Store" width="90" x="782" y="493">
+        <parameter key="repository_entry" value="../Data/10.1_Greece_Prep_NER"/>
+      </operator>
+      <connect from_op="Retrieve 00_Countries.csv" from_port="output" to_op="Filter Examples" to_port="example set input"/>
+      <connect from_op="Filter Examples" from_port="example set output" to_op="Get Pages" to_port="Example Set"/>
+      <connect from_op="Get Pages" from_port="Example Set" to_op="Process Documents from Data" to_port="example set"/>
+      <connect from_op="Process Documents from Data" from_port="example set" to_port="result 1"/>
+      <connect from_op="Process Documents from Data" from_port="word list" to_op="WordList to Data" to_port="word list"/>
+      <connect from_op="WordList to Data" from_port="example set" to_op="Generate Empty Attribute" to_port="example set input"/>
+      <connect from_op="Generate Empty Attribute" from_port="example set output" to_op="Replace Missing Values" to_port="example set input"/>
+      <connect from_op="Replace Missing Values" from_port="example set output" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_port="result 2"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Store" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <description align="center" color="yellow" colored="false" height="62" resized="true" width="144" x="29" y="11">Gesamte L&amp;#228;nder&amp;#252;bersicht wird als Basis gezogen</description>
+      <description align="center" color="yellow" colored="false" height="65" resized="true" width="196" x="175" y="10">Ein Land wird heraus gefiltert, um die L&amp;#228;nderkennung in der Wordlist zu bekommen</description>
+      <description align="center" color="yellow" colored="false" height="65" resized="true" width="128" x="375" y="10">Die HTML Seite wird gecrawlt</description>
+      <description align="center" color="yellow" colored="false" height="62" resized="true" width="252" x="534" y="10">&amp;#220;ber die Operatoren &amp;quot;Extract Content&amp;quot; und &amp;quot;Tokenize Linguistic sentences&amp;quot; wird der reine Text extrahiert</description>
+      <description align="center" color="yellow" colored="false" height="67" resized="false" width="128" x="26" y="260">DIe Wordlist gibt Info wie oft die S&amp;#228;tze vorkommen</description>
+      <description align="center" color="yellow" colored="false" height="64" resized="true" width="164" x="171" y="261">EIne neue Zeile wird erstellt um den L&amp;#228;ndernamen zuzuf&amp;#252;gen</description>
+      <description align="center" color="yellow" colored="false" height="67" resized="false" width="164" x="352" y="262">DIe leere Zeile wird mit dem spezifischen L&amp;#228;ndernamen aufgef&amp;#252;llt</description>
+    </process>
+  </operator>
+</process>

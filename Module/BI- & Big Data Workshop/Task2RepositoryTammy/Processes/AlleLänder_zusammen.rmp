@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.8.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.8.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 04.4_Wordcloud_France_Wordlist_aus_POS" width="90" x="45" y="136">
+        <parameter key="repository_entry" value="../Data/04.4_Wordcloud_France_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 03.4_Wordcloud_Romania_Wordlist_aus_POS" width="90" x="45" y="85">
+        <parameter key="repository_entry" value="../Data/03.4_Wordcloud_Romania_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 02.3_Wordcloud_FInland_Wordlist_aus_POS" width="90" x="45" y="34">
+        <parameter key="repository_entry" value="../Data/02.3_Wordcloud_FInland_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 05.4_Wordcloud_Switzerland_Wordlist_aus_POS" width="90" x="45" y="187">
+        <parameter key="repository_entry" value="../Data/05.4_Wordcloud_Switzerland_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 06.4_Wordcloud_Poland_Wordlist_aus_POS" width="90" x="45" y="238">
+        <parameter key="repository_entry" value="../Data/06.4_Wordcloud_Poland_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 07.4_Wordcloud_Portugal_Wordlist_aus_POS" width="90" x="45" y="289">
+        <parameter key="repository_entry" value="../Data/07.4_Wordcloud_Portugal_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 08.4_Wordcloud_Germany_Wordlist_aus_POS" width="90" x="45" y="340">
+        <parameter key="repository_entry" value="../Data/08.4_Wordcloud_Germany_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 09.4_Wordcloud_Italy_Wordlist_aus_POS" width="90" x="45" y="391">
+        <parameter key="repository_entry" value="../Data/09.4_Wordcloud_Italy_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 10.4_Wordcloud_Greece_Wordlist_aus_POS" width="90" x="179" y="391">
+        <parameter key="repository_entry" value="../Data/10.4_Wordcloud_Greece_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 11.4_Wordcloud_Ireland_Wordlist_aus_POS" width="90" x="313" y="391">
+        <parameter key="repository_entry" value="../Data/11.4_Wordcloud_Ireland_Wordlist_aus_POS"/>
+      </operator>
+      <operator activated="true" class="append" compatibility="9.8.000" expanded="true" height="229" name="Append" width="90" x="246" y="34">
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="merge_type" value="all"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.8.000" expanded="true" height="124" name="Multiply" width="90" x="380" y="34"/>
+      <operator activated="true" class="write_csv" compatibility="9.8.000" expanded="true" height="82" name="Write CSV" width="90" x="514" y="289">
+        <parameter key="csv_file" value="C:/Users/patri/Desktop/Studium/BI Workshop/Wordlist_Named_Entities_complete.csv"/>
+        <parameter key="column_separator" value=";"/>
+        <parameter key="write_attribute_names" value="true"/>
+        <parameter key="quote_nominal_values" value="true"/>
+        <parameter key="format_date_attributes" value="true"/>
+        <parameter key="append_to_file" value="false"/>
+        <parameter key="encoding" value="SYSTEM"/>
+      </operator>
+      <operator activated="true" class="store" compatibility="9.8.000" expanded="true" height="68" name="Store" width="90" x="514" y="136">
+        <parameter key="repository_entry" value="../Data/AllCountries_NERextracted"/>
+      </operator>
+      <connect from_op="Retrieve 04.4_Wordcloud_France_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 3"/>
+      <connect from_op="Retrieve 03.4_Wordcloud_Romania_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 2"/>
+      <connect from_op="Retrieve 02.3_Wordcloud_FInland_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 1"/>
+      <connect from_op="Retrieve 05.4_Wordcloud_Switzerland_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 4"/>
+      <connect from_op="Retrieve 07.4_Wordcloud_Portugal_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 5"/>
+      <connect from_op="Retrieve 08.4_Wordcloud_Germany_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 6"/>
+      <connect from_op="Retrieve 10.4_Wordcloud_Greece_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 7"/>
+      <connect from_op="Retrieve 11.4_Wordcloud_Ireland_Wordlist_aus_POS" from_port="output" to_op="Append" to_port="example set 8"/>
+      <connect from_op="Append" from_port="merged set" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_port="result 1"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Store" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 3" to_op="Write CSV" to_port="input"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>

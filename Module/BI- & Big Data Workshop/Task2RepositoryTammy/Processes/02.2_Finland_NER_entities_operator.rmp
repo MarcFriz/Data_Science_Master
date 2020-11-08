@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="9.8.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="9.8.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="9.8.000" expanded="true" height="68" name="Retrieve 02.1_Finland_Prep_NER" width="90" x="45" y="136">
+        <parameter key="repository_entry" value="../Data/02.1_Finland_Prep_NER"/>
+      </operator>
+      <operator activated="true" class="rosette_text_toolkit:rosette_extract_entities" compatibility="1.11.000" expanded="true" height="68" name="Extract Entities" width="90" x="179" y="136">
+        <parameter key="Connection" value="NewConnection"/>
+        <parameter key="Source Language" value="English"/>
+        <parameter key="Attribute Selector" value="word"/>
+        <parameter key="Link Entities" value="false"/>
+        <parameter key="Genre" value="false"/>
+        <parameter key="Columnar Output" value="true"/>
+        <parameter key="Include Entity Name" value="true"/>
+      </operator>
+      <operator activated="true" class="multiply" compatibility="9.8.000" expanded="true" height="124" name="Multiply" width="90" x="313" y="136"/>
+      <operator activated="true" class="store" compatibility="9.8.000" expanded="true" height="68" name="Store" width="90" x="514" y="238">
+        <parameter key="repository_entry" value="../Data/02.2_Finland_NER_entities_operator"/>
+      </operator>
+      <connect from_op="Retrieve 02.1_Finland_Prep_NER" from_port="output" to_op="Extract Entities" to_port="example set"/>
+      <connect from_op="Extract Entities" from_port="example set" to_op="Multiply" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 1" to_port="result 1"/>
+      <connect from_op="Multiply" from_port="output 2" to_op="Store" to_port="input"/>
+      <connect from_op="Multiply" from_port="output 3" to_port="result 2"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <description align="center" color="yellow" colored="false" height="83" resized="true" width="138" x="22" y="41">Die Wordlist der tokenized sentences wird als Basis gezogen</description>
+      <description align="center" color="yellow" colored="false" height="85" resized="false" width="136" x="165" y="39">Der Extract entitiy operator aus der Rosette extension wird gew&amp;#228;hlt</description>
+    </process>
+  </operator>
+</process>
